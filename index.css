@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-50 text-navy-900 font-sans antialiased dark:bg-navy-950 dark:text-slate-100;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display leading-[1.2] tracking-tight;
+  }
+
+  p {
+    @apply leading-[1.5];
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-cyan-500 ring-offset-2 ring-offset-slate-50 dark:ring-offset-navy-950;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-ieee-600 dark:text-cyan-300;
+  }
+
+  .text-muted {
+    @apply text-slate-600 dark:text-slate-400;
+  }
+
+  .glass {
+    @apply rounded-2xl border border-white/70 bg-white/70 shadow-glass backdrop-blur-xl dark:border-white/10 dark:bg-white/5 dark:shadow-none;
+  }
+
+  .card-hover {
+    @apply transition duration-300 hover:-translate-y-1 hover:border-cyan-500/40 hover:shadow-glow;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-ieee-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-ieee-500/25 transition hover:bg-ieee-600 focus-visible:ring-cyan-400 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-navy-900/15 bg-white/80 px-5 py-3 text-sm font-semibold text-navy-900 transition hover:border-cyan-500/50 hover:text-ieee-600 disabled:cursor-not-allowed disabled:opacity-60 dark:border-white/15 dark:bg-white/5 dark:text-slate-100 dark:hover:text-cyan-300;
+  }
+
+  .input-base {
+    @apply w-full rounded-xl border border-navy-900/15 bg-white px-4 py-3 text-sm text-navy-900 placeholder:text-slate-400 transition focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/30 dark:border-white/10 dark:bg-navy-900/60 dark:text-slate-100 dark:placeholder:text-slate-500;
+  }
+
+  .input-error {
+    @apply border-danger-500 focus:border-danger-500 focus:ring-danger-500/30;
+  }
+}
